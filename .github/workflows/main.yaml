@@ -5,7 +5,7 @@ on:
     branches:
       - main
       - develop
-  workflow_dispatch: {}
+  workflow_dispatch:
 
 concurrency:
   group: main-deploy
@@ -63,3 +63,4 @@ jobs:
             pkill -f "python manage.py runserver" || true
             nohup python manage.py runserver 0.0.0.0:8000 > logs.out 2>&1 &
             echo "✅ Deployment complete and server restarted!"
+
